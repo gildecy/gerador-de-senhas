@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Senhas</title>
+  <style>
+    /* Estilos simples para a página */
+    body {
+      
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #senha {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Senhas</h1>
+  <button onclick="gerarSenha()">Gerar Senha</button>
+  <div id="senha"></div>
+
+  <script>
+    function gerarSenha() {
+      const caracteres = 'ACVNJRwerf';
+      const tamanhoSenha = 6; // Tamanho da senha
+
+      let senha = '';
+      for (let i = 0; i < tamanhoSenha; i++) {
+        const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+        senha += caracteres.charAt(indiceAleatorio);
+      }
+
+      document.getElementById('senha').innerText = `Senha: ${senha}`;
+    }
+  </script>
+</body>
+</html>
